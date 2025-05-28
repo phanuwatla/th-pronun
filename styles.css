@@ -1,0 +1,122 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    background: #F8F5FF;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h3 {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    color: #3154B4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto 5%;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+}
+
+.buttons button {
+    font-size: 24px;
+    font-family: 'Sarabun', sans-serif;
+    padding: 10px 20px;
+    border: 2px solid #E9D5FF;
+    background-color: white;
+    color: black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-width: 60px;
+    width: 8%;
+}
+
+.buttons .vowel-btn {
+    width: 10%;
+    border-color: #FBCFE8;
+}
+
+.buttons .vowel-btn:hover {
+    background-color: #FCE7F3;
+}
+
+.buttons button:hover {
+    background-color: #F3E8FF;
+}
+
+.display div {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+#repeatBtn {
+    font-family: 'Sarabun', sans-serif;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 18px;
+    background-color: #4F46E5;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#repeatBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#repeatBtn:hover:not(:disabled) {
+    background-color: #4338CA;
+}
+
+.display {
+    margin-top: 20px;
+    padding: 1em 1.5em 1em 1em; 
+    background: linear-gradient(to right, #e3caff, #fde8ff);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.display .final-word {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #6D28D9;
+}
+
+.how-to-display {
+    margin-top: 20px;
+    padding: 0.5em 1em; 
+    background-color: #EFF6FF;
+    border-radius: 12px;
+}
+
+.how-to-display p {
+    color: #3154B4;
+}
