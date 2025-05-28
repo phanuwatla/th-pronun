@@ -49,18 +49,18 @@ const vowels = ["ะ", "า", "ิ", "ี", "ึ", "ื", "ุ", "ู", "เ-ะ
     "เ-ียะ", "เ-ีย", "เ-ือะ", "เ-ือ", "-ัวะ", "-ัว", "ำ", "ใ", "ไ", "เ-า", "ฤ", "ฤา", "ฦ", "ฦา"];
 
 const vowelReadings = {
-    ะ: "สะ หระ อะ",
-    า: "สะ หระ อา",
-    ำ: "สะ หระ อำ",
-    "ิ": "สะ หระ อิ",
-    "ี": "สะ หระ อี",
-    "ึ": "สะ หระ อึ",
-    "ื": "สะ หระ อื",
-    "ุ": "สะ หระ อุ",
-    "ู": "สะ หระ อู",
-    เ: "สะ หระ เอ",
-    แ: "สะ หระ แอ",
-    โ: "สะ หระ โอ",
+    ะ: "สะ ร่ะ อะ",
+    า: "สะ ร่ะ อา",
+    ำ: "สะ ร่ะ อำ",
+    "ิ": "สะ ร่ะ อิ",
+    "ี": "สะ ร่ะ อี",
+    "ึ": "สะ ร่ะ อึ",
+    "ื": "สะ ร่ะ อื",
+    "ุ": "สะ ร่ะ อุ",
+    "ู": "สะ ร่ะ อู",
+    เ: "สะ ร่ะ เอ",
+    แ: "สะ ร่ะ แอ",
+    โ: "สะ ร่ะ โอ",
 };
 
 let selectedConsonant = "";
@@ -130,7 +130,7 @@ function showResult() {
         word = selectedConsonant + selectedVowel;
     }
 
-    const vowelSoundFull = vowelReadings[selectedVowel] || `สะ หระ ${selectedVowel}`;
+    const vowelSoundFull = vowelReadings[selectedVowel] || `สะ ร่ะ ${selectedVowel}`;
     const consonantSoundShort = consonants.find(c => c.char === selectedConsonant)?.sound.split(" ")[0] || selectedConsonant + "อ";
     const vowelSoundShort = vowelSoundFull.split(" ").slice(-1)[0];
 
