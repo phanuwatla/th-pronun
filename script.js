@@ -183,12 +183,12 @@ function repeatWord() {
     utterance.lang = 'th-TH';
 
     // เปลี่ยนข้อความปุ่มระหว่างเล่นเสียง
-    button.textContent = "กำลังเล่น...";
+    button.textContent = "<i class="fas fa-volume-up"></i> กำลังเล่น...";
     button.disabled = true;
 
     // เมื่อเสียงพูดจบ
     utterance.onend = () => {
-        button.textContent = "ฟังเสียง (Listen)";
+        button.textContent = "<i class="fas fa-volume-up"></i> ฟังเสียง (Listen)";
         button.disabled = false;
     };
 
