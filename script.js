@@ -183,12 +183,12 @@ function repeatWord() {
     utterance.lang = 'th-TH';
 
     // เปลี่ยนข้อความและไอคอนขณะเล่น
-    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังเล่น...';
+    button.innerHTML = '<i class="fas fa-volume-up"></i> กำลังเล่น...';
     button.disabled = true;
 
     utterance.onend = () => {
         // กลับเป็นไอคอนลำโพงและข้อความเดิม
-        button.innerHTML = '<i class="fas fa-volume-up"></i> ฟังเสียง (Listen)';
+        button.innerHTML = '<i class="fas fa-volume"></i> ฟังเสียง (Listen)';
         button.disabled = false;
     };
 
