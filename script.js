@@ -46,7 +46,7 @@ const consonants = [
 ];
 
 const vowels = ["ะ", "า", "ิ", "ี", "ึ", "ื", "ุ", "ู", "เ-ะ", "เ", "แ-ะ", "แ", "โ-ะ", "โ", "เ-าะ", "-อ", "เ-อะ", "เ-อ",
-    "เ-ียะ", "เ-ีย", "เ-ือะ", "เ-ือ", "-ัวะ", "-ัว", "ำ", "ใ", "ไ", "เ-า", "ฤ", "ฤา", "ฦ", "ฦา"];
+    "เอียะ", "เอีย", "เอือะ", "เอือ", "อัวะ", "อัว", "ำ", "ใ", "ไ", "เ-า", "ฤ", "ฤา", "ฦ", "ฦา"];
 
 const vowelReadings = {
     ะ: "สะ ร่ะ อะ",
@@ -138,16 +138,24 @@ function selectVowel(char) {
 }
 
 function showResult() {
-    const frontVowels = ["เ", "แ", "โ", "ใ", "ไ"];
-    const specialVowelWithOr = ["ื"];
+    const vowelTemplate = selectedVowel;
+
     let word = "";
 
-    if (frontVowels.includes(selectedVowel)) {
-        word = selectedVowel + selectedConsonant;
-    } else if (specialVowelWithOr.includes(selectedVowel)) {
-        word = selectedConsonant + selectedVowel + "อ";
+    if (vowelTemplate.includes("-")) {
+        // ถ้ามีเครื่องหมาย - แสดงว่าต้องแทนพยัญชนะลงไปในตำแหน่งนั้น
+        word = vowelTemplate.replace("-", selectedConsonant);
+    } else if (vowelTemplate.includes("อ")) {
+        // ถ้าเป็นกรณีที่มี "อ" นำหน้า เช่น "-อ" หรือ "-ัว", ให้แทนด้วยพยัญชนะ
+        const dashReplaced = vowelTemplate.replace("อ", selectedConsonant);
+        if (dashReplaced !== vowelTemplate) {
+            word = dashReplaced;
+        } else {
+            word = selectedConsonant + vowelTemplate;
+        }
     } else {
-        word = selectedConsonant + selectedVowel;
+        // สระทั่วไป วางหลังพยัญชนะ
+        word = selectedConsonant + vowelTemplate;
     }
 
     const vowelSoundFull = vowelReadings[selectedVowel] || `สะ ร่ะ ${selectedVowel}`;
@@ -159,15 +167,10 @@ function showResult() {
     lastVowelShort = vowelSoundShort;
 
     document.getElementById("finalWord").textContent = word;
-    document.getElementById("formula").textContent = `${selectedConsonant} + อ${selectedVowel} = ${word}`;
+    document.getElementById("formula").textContent = `${selectedConsonant} + ${selectedVowel} = ${word}`;
     repeatBtn.disabled = false;
 
     speakSequence([vowelSoundFull, consonantSoundShort, vowelSoundShort, word]);
-}
-
-function repeatWord() {
-    if (!lastWord) return;
-    speakSequence([lastConsonantShort, lastVowelShort, lastWord]);
 }
 
 function createButtons() {
