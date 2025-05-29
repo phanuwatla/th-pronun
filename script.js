@@ -188,7 +188,7 @@ function repeatWord() {
 
     utterance.onend = () => {
         // กลับเป็นไอคอนลำโพงและข้อความเดิม
-        button.innerHTML = '<i class="fas fa-volume"></i> ฟังเสียง (Listen)';
+        button.innerHTML = '<i class="fas fa-volume-low"></i> ฟังเสียง (Listen)';
         button.disabled = false;
     };
 
