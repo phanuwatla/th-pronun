@@ -182,13 +182,13 @@ function repeatWord() {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = 'th-TH';
 
-    // เปลี่ยนข้อความปุ่มระหว่างเล่นเสียง
-    button.textContent = "<i class="fas fa-volume-up"></i> กำลังเล่น...";
+    // เปลี่ยนข้อความและไอคอนขณะเล่น
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังเล่น...';
     button.disabled = true;
 
-    // เมื่อเสียงพูดจบ
     utterance.onend = () => {
-        button.textContent = "<i class="fas fa-volume-up"></i> ฟังเสียง (Listen)";
+        // กลับเป็นไอคอนลำโพงและข้อความเดิม
+        button.innerHTML = '<i class="fas fa-volume-up"></i> ฟังเสียง (Listen)';
         button.disabled = false;
     };
 
