@@ -20,7 +20,7 @@ ul, ol {
 
 .container {
     max-width: 1200px;
-    margin: auto;
+    margin: auto 5%;
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -35,7 +35,7 @@ ul, ol {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: start;
 }
 
 .buttons button {
@@ -48,30 +48,47 @@ ul, ol {
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    min-width: 60px;
-    flex: 1 1 calc(20% - 10px); /* ปรับให้มีระยะห่างเล็กน้อย */
     box-sizing: border-box;
+
+    flex: 0 0 10%;
+    max-width: 10%;
+    min-width: 60px;
 }
 
+/* สไตล์เฉพาะปุ่มสระ */
 .buttons .vowel-btn {
     border-color: #FBCFE8;
 }
 
-.buttons .vowel-btn {
-    border-color: #FBCFE8;
-}
-
+/* Hover สำหรับสระ */
 .buttons .vowel-btn:hover {
     background-color: #FCE7F3;
 }
 
+/* Hover สำหรับปุ่มทั่วไป */
 .buttons button:hover {
     background-color: #F3E8FF;
 }
 
+/* Responsive: กลาง (6 ปุ่มต่อแถว) */
+@media (max-width: 1023px) {
+    .buttons button {
+        flex: 0 0 16.666%;
+        max-width: 16.666%;
+    }
+}
+
+/* Responsive: เล็ก (2 ปุ่มต่อแถว) */
+@media (max-width: 767px) {
+    .buttons button {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 .display {
     margin-top: 20px;
-    padding: 1em 1.5em;
+    padding: 1em 1.5em 1em 1em;
     background: linear-gradient(to right, #e3caff, #fde8ff);
     border-radius: 12px;
     text-align: center;
@@ -91,7 +108,7 @@ ul, ol {
 #repeatBtn {
     font-family: 'Sarabun', sans-serif;
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 8px 16px;
     font-size: 18px;
     background-color: #4F46E5;
     color: white;
@@ -119,52 +136,4 @@ ul, ol {
 
 .how-to-display p {
     color: #3154B4;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .buttons button {
-        flex: 1 1 14%;
-        font-size: 18px;
-    }
-
-    .container {
-        margin: 10px;
-        padding: 20px;
-    }
-
-    .display .final-word {
-        font-size: 2em;
-    }
-}
-
-@media (max-width: 768px) {
-    .buttons button {
-        flex: 1 1 20%;
-        font-size: 16px;
-    }
-
-    h2, h3 {
-        font-size: 1.2em;
-    }
-
-    #repeatBtn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .buttons button {
-        flex: 1 1 100%; /* เต็มแถวแนวนอน */
-        max-width: 100%;
-    }
-
-    .display .final-word {
-        font-size: 1.6em;
-    }
-
-    #repeatBtn {
-        font-size: 16px;
-        padding: 8px 14px;
-    }
 }
