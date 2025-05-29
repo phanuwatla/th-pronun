@@ -142,12 +142,12 @@ ul, ol {
 
 .title-container {
     max-width: 1200px;
-    margin: auto 5%;
+    margin: 5%;
     padding: 30px;
     border-radius: 20px;
 
     /* ไล่สีสดใสและกลับทิศทาง */
-    background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background: linear-gradient(135deg, #fa7e1e, #d62976, #962fbf);
     filter: saturate(1.3);
 
     color: white;
