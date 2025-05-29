@@ -1,6 +1,8 @@
 body {
     font-family: 'Sarabun', sans-serif;
-    background: #F8F5FF;
+    background-color: #F8F5FF;
+    background-image: radial-gradient(#d8b4fe 1px, transparent 1px);
+    background-size: 20px 20px;
     color: #333;
     margin: 0;
     padding: 20px;
