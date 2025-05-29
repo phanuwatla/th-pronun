@@ -150,6 +150,8 @@ function showResult() {
     } else if (/^[เแโใไ]/.test(vowelTemplate)) {
         // สระที่ต้องวางหน้าพยัญชนะ เช่น เ แ โ ใ ไ
         word = vowelTemplate + selectedConsonant;
+    } else if (vowelTemplate === "ื") {
+        word = selectedConsonant + "ือ"; // เติม "อ" ต่อท้าย
     } else {
         // สระทั่วไป วางหลังพยัญชนะ เช่น พา => พ + า
         word = selectedConsonant + vowelTemplate;
