@@ -139,25 +139,23 @@ function selectVowel(char) {
 
 function showResult() {
     const vowelTemplate = selectedVowel;
-
     let word = "";
 
     if (vowelTemplate.includes("-")) {
-        // ถ้ามีเครื่องหมาย - แสดงว่าต้องแทนพยัญชนะลงไปในตำแหน่งนั้น
+        // สระมี "-" ให้แทนตำแหน่งด้วยพยัญชนะ เช่น เ-อ => เมอ
         word = vowelTemplate.replace("-", selectedConsonant);
     } else if (vowelTemplate.includes("อ")) {
-        // ถ้าเป็นกรณีที่มี "อ" นำหน้า เช่น "-อ" หรือ "-ัว", ให้แทนด้วยพยัญชนะ
-        const dashReplaced = vowelTemplate.replace("อ", selectedConsonant);
-        if (dashReplaced !== vowelTemplate) {
-            word = dashReplaced;
-        } else {
-            word = selectedConsonant + vowelTemplate;
-        }
+        // สระเช่น -อ, -ัว => แทน "อ" ด้วยพยัญชนะ
+        word = vowelTemplate.replace("อ", selectedConsonant);
+    } else if (/^[เแโใไ]/.test(vowelTemplate)) {
+        // สระที่ต้องวางหน้าพยัญชนะ เช่น เ แ โ ใ ไ
+        word = vowelTemplate + selectedConsonant;
     } else {
-        // สระทั่วไป วางหลังพยัญชนะ
+        // สระทั่วไป วางหลังพยัญชนะ เช่น พา => พ + า
         word = selectedConsonant + vowelTemplate;
     }
 
+    // อ่านเสียงแบบแยก
     const vowelSoundFull = vowelReadings[selectedVowel] || `สะ ร่ะ ${selectedVowel}`;
     const consonantSoundShort = consonants.find(c => c.char === selectedConsonant)?.sound.split(" ")[0] || selectedConsonant + "อ";
     const vowelSoundShort = vowelSoundFull.split(" ").slice(-1)[0];
