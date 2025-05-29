@@ -50,8 +50,8 @@ ul, ol {
     transition: background-color 0.2s ease;
     box-sizing: border-box;
 
-    flex: 0 0 10%;
-    max-width: 10%;
+    flex: 0 0 calc(100% / 11 - 10px);
+    max-width: calc(100% / 11 - 10px);
     min-width: 60px;
 }
 
@@ -70,19 +70,19 @@ ul, ol {
     background-color: #F3E8FF;
 }
 
-/* Responsive: กลาง (6 ปุ่มต่อแถว) */
+/* Responsive: แท็บเล็ต (6 ปุ่มต่อแถว) */
 @media (max-width: 1023px) {
     .buttons button {
-        flex: 0 0 16.666%;
-        max-width: 16.666%;
+        flex: 0 0 calc(100% / 6 - 10px);
+        max-width: calc(100% / 6 - 10px);
     }
 }
 
-/* Responsive: เล็ก (2 ปุ่มต่อแถว) */
+/* Responsive: โทรศัพท์ (3 ปุ่มต่อแถว) */
 @media (max-width: 767px) {
     .buttons button {
-        flex: 0 0 50%;
-        max-width: 50%;
+        flex: 0 0 calc(100% / 3 - 10px);
+        max-width: calc(100% / 3 - 10px);
     }
 }
 
