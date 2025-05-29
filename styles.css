@@ -139,3 +139,30 @@ ul, ol {
 .how-to-display p {
     color: #3154B4;
 }
+
+.title-container {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 16px;
+    font-family: 'Sarabun', sans-serif;
+    user-select: none;
+    /* กึ่งกลางแนวตั้ง ถ้าอยากให้สูงเต็มความสูง container อื่นๆ เพิ่ม height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container h1 {
+    margin: 0 0 10px 0;
+    font-size: 3em;
+}
+
+.title-container p {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
