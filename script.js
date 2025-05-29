@@ -171,6 +171,11 @@ function showResult() {
     speakSequence([vowelSoundFull, consonantSoundShort, vowelSoundShort, word]);
 }
 
+function repeatWord() {
+    if (!lastWord) return;
+    speakSequence([lastConsonantShort, lastVowelShort, lastWord]);
+}
+
 function createButtons() {
     consonants.forEach(({ char, sound }) => {
         const btn = document.createElement("button");
