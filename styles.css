@@ -146,14 +146,13 @@ ul, ol {
     padding: 30px;
     border-radius: 20px;
 
-    background: linear-gradient(to right, #ae54ef, #e44ca6, #f8741c);
+    background: linear-gradient(to right, #ae54ef, #e44ca6, #f8741c);
 
     color: white;
     text-align: center;
     font-family: 'Sarabun', sans-serif;
     user-select: none;
 
-    /* จัดกึ่งกลางแนวตั้งและแนวนอน */
     display: flex;
     flex-direction: column;
     justify-content: center;
