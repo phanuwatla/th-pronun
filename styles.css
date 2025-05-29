@@ -147,7 +147,7 @@ ul, ol {
     border-radius: 20px;
 
     /* ไล่สีสดใสและกลับทิศทาง */
-    background: linear-gradient(135deg, #fa7e1e, #d62976, #962fbf);
+    background: linear-gradient(135deg, #ae54ef, #e44ca6, #f8741c);
     filter: saturate(1.3);
 
     color: white;
