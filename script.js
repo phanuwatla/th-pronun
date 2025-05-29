@@ -130,7 +130,7 @@ function selectConsonant(char, sound) {
 
 function selectVowel(char) {
     if (!selectedConsonant) {
-        alert("กรุณาเลือกพยัญชนะก่อนเลือกสระ");
+        showCustomAlert();
         return;
     }
     selectedVowel = char;
@@ -210,6 +210,14 @@ function createButtons() {
         btn.onclick = () => selectVowel(char);
         vowelsContainer.appendChild(btn);
     });
+}
+
+function showCustomAlert() {
+    const alertBox = document.getElementById("customAlert");
+    alertBox.style.display = "block";
+    setTimeout(() => {
+        alertBox.style.display = "none";
+    }, 3000); // แสดง 3 วินาที
 }
 
 createButtons();
