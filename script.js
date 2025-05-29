@@ -174,8 +174,25 @@ function showResult() {
 }
 
 function repeatWord() {
-    if (!lastWord) return;
-    speakSequence([lastConsonantShort, lastVowelShort, lastWord]);
+    const word = document.getElementById('finalWord').textContent;
+    const button = document.getElementById('repeatBtn');
+
+    if (!word || word === "ยังไม่เลือกพยัญชนะและสระ") return;
+
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'th-TH';
+
+    // เปลี่ยนข้อความปุ่มระหว่างเล่นเสียง
+    button.textContent = "กำลังเล่น...";
+    button.disabled = true;
+
+    // เมื่อเสียงพูดจบ
+    utterance.onend = () => {
+        button.textContent = "ฟังเสียง (Listen)";
+        button.disabled = false;
+    };
+
+    speechSynthesis.speak(utterance);
 }
 
 function createButtons() {
