@@ -49,8 +49,12 @@ ul, ol {
     cursor: pointer;
     transition: background-color 0.2s ease;
     min-width: 60px;
-    flex: 1 1 8%;
-    max-width: 80px;
+    flex: 1 1 calc(20% - 10px); /* ปรับให้มีระยะห่างเล็กน้อย */
+    box-sizing: border-box;
+}
+
+.buttons .vowel-btn {
+    border-color: #FBCFE8;
 }
 
 .buttons .vowel-btn {
@@ -151,9 +155,8 @@ ul, ol {
 
 @media (max-width: 480px) {
     .buttons button {
-        flex: 1 1 30%;
-        font-size: 16px;
-        padding: 8px 10px;
+        flex: 1 1 100%; /* เต็มแถวแนวนอน */
+        max-width: 100%;
     }
 
     .display .final-word {
